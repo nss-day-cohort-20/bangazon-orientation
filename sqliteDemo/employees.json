@@ -1,0 +1,10 @@
+{
+  "list": [
+    { "id": "3", "firstName": "Dwight", "lastName": "Schrute", "salary": 45000, "dept": "Sales" },
+    { "id": "4", "firstName": "Holly", "lastName": "Flax", "salary": 47000, "dept": "Sales" },
+    { "id": "5", "firstName": "Jim", "lastName": "Halpert", "salary": 55000, "dept": "Sales" },
+    { "id": "6", "firstName": "Pam", "lastName": "Beesly", "salary": 52000, "dept": "Sales" },
+    { "id": "7", "firstName": "Michael", "lastName": "Scotto", "salary": 60000, "dept": "Sales" },
+    { "id": "8", "firstName": "Stanley", "lastName": "Hudson", "salary": 55000, "dept": "Sales" }
+  ]
+}
