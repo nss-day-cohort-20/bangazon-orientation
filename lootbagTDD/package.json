@@ -1,0 +1,25 @@
+{
+  "name": "bag-o-loot-JoeShep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "Joe Shep",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha --recursive --watch -R list"
+  }
+}
