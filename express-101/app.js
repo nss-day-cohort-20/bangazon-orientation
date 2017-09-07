@@ -2,13 +2,13 @@ let express = require('express');
 let app = express();
 
 // middleware
-// const logParams = (req, res, next) => {
-//   console.log("Middleware function awesomeness");
-//   // console.log('request', req);
-//   console.log('req.params', req.params );
-//   console.log('req.url from "logParams"', req.url );
-//   next();
-// };
+const logParams = (req, res, next) => {
+  console.log("Middleware function awesomeness");
+  // console.log('request', req);
+  console.log('req.params', req.params.id );
+  console.log('req.url from "logParams"', req.url );
+  next();
+};
 
 // const anotherMiddleware = (req, res, next) => {
 //   console.log('req.url from "anotherMiddleware"', req.url);
@@ -21,7 +21,7 @@ let app = express();
 // }
 
 // With no route arg, middleware will run on every request
-// app.use(logParams);
+
 
 // With a route arg, this will run only when it matches the request URL
 // app.use('/hello', anotherMiddleware);
@@ -31,6 +31,7 @@ let app = express();
 
 let routes = require('./routes/');
 
+app.use(logParams);
 app.use(`/api/v1/`, routes);
 
 app.use( (req, res, next) => {
