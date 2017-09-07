@@ -1,0 +1,52 @@
+{
+  "directors": [
+    {
+      "name": "Jimmy Pesto",
+      "gender": "male",
+      "birth_year": 1947,
+      "twitter_handle": "@JamesPestoDirex"
+    },
+    {
+      "name": "Linda LaVida",
+      "gender": "female",
+      "birth_year": 1978,
+      "twitter_handle": "@LaVida_loca"
+    },
+    {
+      "name": "Star Sneetch",
+      "gender": "binary",
+      "birth_year": 1993,
+      "twitter_handle": "@sneetchbelly"
+    },
+    {
+      "name": "David Duchovny",
+      "gender": "male",
+      "birth_year": 1962,
+      "twitter_handle": "@iwanttodirect"
+    },
+    {
+      "name": "Maggie Simpson",
+      "gender": "female",
+      "birth_year": 1988,
+      "twitter_handle": "@permababy88"
+    }, 
+    {
+      "name": "Gort McGoo",
+      "gender": "male",
+      "birth_year": 1939,
+      "twitter_handle": "@tooldfortwitter"
+    }, 
+    {
+      "name": "Garth Hairpin",
+      "gender": "male",
+      "birth_year": 1974,
+      "twitter_handle": "@actiongarth"
+    }, 
+    {
+      "name": "Della Ware",
+      "gender": "female",
+      "birth_year": 1980,
+      "twitter_handle": "@dellacallstheshots"
+    }
+  ]
+}
