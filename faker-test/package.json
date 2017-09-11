@@ -1,0 +1,17 @@
+{
+  "name": "faker-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "db:reset": "node db/build-db"
+  },
+  "engines": {
+    "node": "7.3.0"
+  },
+  "dependencies": {
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}
