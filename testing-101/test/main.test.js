@@ -1,6 +1,6 @@
 const { assert: { equal, deepEqual, notEqual, isFunction, isObject } } = require('chai');
 const { getCustomer, addCustomer } = require('../js/main');
-const { createTables } = require('../js/make-table');
+const { createTables, insertRows } = require('../js/make-table');
 
 
 describe('main', () => {
@@ -14,20 +14,29 @@ describe('main', () => {
       .then( (customer) => {
         isObject(customer, "Hooray! It's a bouncing baby obj")
       })
+      .catch( (err) => {
+        console.log('erroe getting customer', err);
+      });
     });
 
     it("should return a customer's info", () => {
       getCustomer("615-555-5309")
       .then( (customer) => {
         deepEqual(customer, {first_name: "Danny", last_name: "Elfman"});
+      })
+      .catch( (err) => {
+        console.log("err getting cust info", err)
       });
     });
   }); //end get
 
-  describe('add customer', () => {
-
+  describe('addCustomer', () => {
     beforeEach( (done) => {
       createTables()
+      .then( (msg) => {
+        console.log('Create Then', msg );
+        return insertRows()
+      })
       .then( (idArr) => {
         console.log('idArr', idArr);
         done();
@@ -38,46 +47,49 @@ describe('main', () => {
       isFunction(addCustomer);
     });
 
-    it('should return an object', () => {
+    it(`should return a object w/confirmation msg and last ID`, () => {
       let newCust = {
         first_name: "Pat",
         last_name: "Smith",
+        street: "123 Sesame St",
         city: "Nowhere",
         state: "Alabama",
-        zip: "22288",
-        phone: "555-444-5555"
+        zip: "22222",
+        phone: "222-444-5555"
       }
 
+      let expected = {msg: "New customer added", custId: 9}
       return addCustomer(newCust)
-      .then( (response) => {
-        isObject(response)
+      .then( ( result ) => {
+        deepEqual(result, expected);
+      });
+    });
+  }); // end of addCustomer block
+
+  describe(`delete customer`, () => {
+    // This beforeEach feels repetitive, since we also added it to the 'add' describe block.
+    // Maybe just put at top level describe block? But it's not really necessary
+    // before the 'get' tests What do you think?
+    beforeEach( (done) => {
+      createTables()
+      .then( (msg) => {
+        console.log('Create Then', msg );
+        return insertRows()
+      })
+      .then( (idArr) => {
+        console.log('idArr', idArr);
+        done();
       });
     });
 
-    it('should return a confirmation msg and id of new customer', () => {
-      let newCust = {
-        first_name: "Pat",
-        last_name: "Smith",
-        city: "Nowhere",
-        state: "Alabama",
-        zip: "22288",
-        phone: "555-444-5555"
-      };
-      let expected = {msg: "New customer added", id: 9};
-
-      return addCustomer(newCust)
-      .then( (response) => {
-        equal(response.msg, expected.msg);
+    // Have a test here that fails. What next?
+    it(`should return an object`, () => {
+      deleteCustomer()
+      .then( (result) => {
+        isObject(result);
       });
     });
 
-    it.skip('should freak if you do not add a last name', () => {
-      let expected = "Please include a last name";
-      return addCustomer()
-      .then( (response) => {
-        equal(response.msg, expected.msg)
-      });
-    });
   });
 });
 
