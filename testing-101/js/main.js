@@ -16,3 +16,14 @@ module.exports.getCustomer = (num) => {
     });
   });
 };
+
+module.exports.addCustomer = ({first_name, last_name, city, street, state, zip, phone}) => {
+  return new Promise( (resolve, reject) => {
+    db.run(`INSERT into customers VALUES(
+      null, "${first_name}", "${last_name}", "${city}", "${street}", "${state}", "${zip}", "${phone}"
+    )`, function(err) {
+      if (err) return reject(err);
+      resolve({msg: "New customer added", id: this.lastID});
+    })
+  });
+};
