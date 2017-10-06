@@ -1,0 +1,60 @@
+{
+  "shows": [
+    {
+      "name": "Mr. Robot",
+      "network": "USA Network",
+      "genre": "drama",
+      "in_production": true,
+      "directorId": 3
+    },
+    {
+      "name": "The IT Crowd",
+      "network": "Netflix",
+      "genre": "comedy",
+      "in_production": false,
+      "directorId": 5
+    },
+    {
+      "name": "Game of Thrones",
+      "network": "HBO",
+      "genre": "drama",
+      "in_production": true,
+      "directorId": 4
+    },
+    {
+      "name": "Mad Men",
+      "network": "AMC",
+      "genre": "drama",
+      "in_production": false,
+      "directorId": 8
+    },
+    {
+      "name": "Better Call Saul",
+      "network": "AMC",
+      "genre": "dramedy",
+      "in_production": true,
+      "directorId": 4
+    },
+    {
+      "name": "Cheers",
+      "network": "NBC",
+      "genre": "comedy",
+      "in_production": false,
+      "directorId": 1
+    },
+    {
+      "name": "Bob's Burgers",
+      "network": "Fox",
+      "genre": "animation",
+      "in_production": true,
+      "directorId": 2
+    },
+    {
+      "name": "Stranger Things",
+      "network": "Netflix",
+      "genre": "drama",
+      "in_production": true,
+      "directorId": 6
+    }
+  ]
+}
