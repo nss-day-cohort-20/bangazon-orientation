@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title pug demo
+    include stylesheets.pug
+  body
+    h1 Happy as a Pug in a Rug
+    h2 #{subtitle}
+    h2= url
+
+    .names#othernames
+      ul
+        each name in names
+          li Hello, #{name}
+    p
+      |This is a paragraph
+
+    - let wtf = "username"
+    h2= wtf
+
+    input(type='test' placeholder=wtf)
+
+    block content
+      p This is here by default
+
+    .footer-nav
+      a.foot-nav(class={active: loggedIn === true} href='/') Logout
+      a.foot-nav(class={active: loggedIn === false} href='/') Login/Register
